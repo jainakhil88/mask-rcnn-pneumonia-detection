@@ -1,0 +1,41 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>Pneumonia Detection</title>  
+
+    <script type="text/javascript">
+
+    function check(){
+    var file = document.getElementById('upfile');
+    console.log(file);
+    if(file.value === null || file.value === ""){
+        alert("Please select a file to upload");
+        return false;
+    }
+    else{
+        //alert('FILE IS UPLOADED');
+        return true;
+    }
+    }
+    
+    function setLocation(element) {
+       console.log(element.value)
+       document.forms[0].action = element.value
+    }
+
+    </script>
+
+
+</head>  
+<body>  
+
+    <form action = "/detectUI" method = "post" enctype="multipart/form-data"> 
+        <h3> How would you like to view the predictions </h3>
+        HTML<input type="radio" name="outputOption" id="radioUI" value="detectUI" onclick="setLocation(this)" checked="checked" />
+        Rest(JSON)<input type="radio" name="outputOption" id="radioRest" value="detectRest" onclick="setLocation(this)"  >
+        <br/>
+        <input id="upfile" type="file" name="file" accept=".png,.dcm"/>  
+        <input type = "submit" value="Upload"  onclick="return check();">  
+    </form>  
+</body>  
+</html>  

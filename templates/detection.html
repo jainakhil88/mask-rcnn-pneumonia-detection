@@ -1,0 +1,24 @@
+<!DOCTYPE html>  
+<html>  
+ 
+<head>  
+    <title>Pneumonia Detection</title>
+</head>
+<body>  
+	<h1>Detection Result</h1> 
+	<label><b>ROIs:</b></label>   {{ var.rois }} <br/>
+	<label><b>Class Ids:</b></label>   {{ var.class_ids }} <br/>
+	<label><b>Scores:</b></label>   {{ var.scores }} <br/>
+	<label><b>Image (Base64 Encoded):</b></label>   <br/> 	
+    	<textarea rows="10" cols="200">
+          {{ var.image }} 
+         </textarea> <br/>
+    <br/>
+    <label><b>Image:</b></label><br/>
+    <!--https://stackoverflow.com/a/56266795/1225413 -->
+    <img src="data:image/jpeg;base64,{{ var.image }}" alt="img_data" width="1000" height="500"  id="imgslot2"/>
+
+
+	
+</body>  
+</html>  

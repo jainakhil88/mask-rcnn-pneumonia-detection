@@ -1,0 +1,24 @@
+<html>  
+<head>  
+<title>success</title>  
+</head>  
+<body>  
+<p><b>File uploaded successfully</b></p> 
+<p><b>File Name:</b> {{name}}</p> 
+<!--<p><b>File content:</b> {{content}}</p>  -->
+
+<p><b>Original Data:</b> 
+ {% for table in ogtables %}            
+            {{ table|safe }}
+    {% endfor %}
+</p> 
+
+<p> Columns {{datatypes}}</p>
+
+<p><b>Updated Data:</b> 
+ {% for table in tables %}            
+            {{ table|safe }}
+    {% endfor %}
+</p> 
+</body>  
+</html>  
